@@ -1,0 +1,31 @@
+   <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"></button>
+          </p>
+         
+          <div class="row">
+            
+            <% @revenues.each do |revenue| %>
+              <div class="col-xs-6 col-lg-4">
+                <h2><%= revenue.name %></h2>
+                <p><%= revenue.description %></p>
+                <p><%= image_tag revenue.cover.url(:medium) %></p>
+                <p><%= link_to 'Details', revenue,:class =>'btn btn-default' %></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+           <%end%>
+
+          </div><!--/row-->
+        </div><!--/.col-xs-12.col-sm-9-->
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+          <div class="list-group">
+            <% @categories.each do |category| %>
+          
+            <%= link_to category.name, {controller:"home",action:"category",id:category}, :class =>"list-group-item" %>
+            <%end%>
+          </div>
+        </div><!--/.sidebar-offcanvas-->
+      </div><!--/row-->
+

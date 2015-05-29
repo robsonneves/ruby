@@ -1,0 +1,38 @@
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading"> <%= @revenue.name %><span class="text-muted"><%= @revenue.category.name %></span></h2>
+         	
+         	<ul class="list-group">
+         	<% @revenue.ingredients.each do | ingredient|%>
+         		  
+         		  <li class=""><%= ingredient.name %></li>
+			
+		  <% end %>	
+		  </ul>
+
+
+
+        </div>
+        <div class="col-md-5">
+
+          <%= image_tag @revenue.cover.url(:medium)%>	
+
+          <div class="row">
+			  <div class="col-xs-6 col-md-3">
+			    <a href="#" class="thumbnail">
+			     	<%= image_tag @revenue.cover.url(:thumb)%>	
+			    </a>
+			  </div>
+</div>
+
+        </div>
+      </div>
+
+      <footer>
+        <p>Gosto ->> <a href="#"> vote </a> ou <a href="#">add suas receitas</a></p>
+      </footer>
+
+<%= link_to 'Back', '/' %>
+.

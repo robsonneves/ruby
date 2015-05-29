@@ -1,0 +1,12 @@
+        <div class="row">
+            
+            <% @category.revenues.each do |revenue| %>
+              <div class="col-xs-6 col-lg-4">
+                <h2><%= revenue.name %></h2>
+                <p><%= revenue.description %></p>
+                <p><%= link_to 'Details    ', revenue,:class =>'btn btn-default' %></p>
+              </div><!--/.col-xs-6.col-lg-4-->
+           <%end%>
+
+          </div><!--/row-->
+
